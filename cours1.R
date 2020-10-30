@@ -57,13 +57,68 @@ print(tmp$tab.newdata)
 #d'espérance k et ... k
 #output la classe prédite
 
+#Correction Exo 2####
+# input : x,z
+train=sample(1:150,100)
+x=iris[train,1:4]
+z=iris[train,5]
+
+gmmclassif = function (x,z){
+  K=length(levels(z)) #nombre de classe
+  n=nrow(x);p=ncol(x) #n : nombre d'échantillons, p : dimensions
+  prop=rep(NA,K) # vecteur de 3 données NA, NA, ...
+  mu=matrix(NA,K,p) # matrice de 3 * 4 remplie de NA
+  sigma=array(NA,dim=c(K,p,p)) # 3 * 4 * 4
+  for (k in 1:K){
+    prop[k]=mean(z==levels(z)[k])
+    mu[k,]=colMeans(x[which(z==levels(z)[k]),])
+    sigma[k,,]=var(x[which(z==levels(z)[k]),])
+  }
+  return(list(prop=prop,mu=mu,sigma=sigma,K=K))
+}
+
+library(mclust)
+
+predict.gmmclassif = function (mod,x){
+  tik=matrix(NA,nrow(x),mod$K)
+  for (k in 1:mod$K){
+    tik[,k] = mod$prop[k] * dmvnorm(x,mod$mu[k,],mod$sigma[k,,])
+  }
+  tik=tik/rowSums(tik)
+  z=max.col(tik)
+  return(list(z=z,tik=tik))
+}
+
+mod=gmmclassif(x,z)
+pred=predict.gmmclassif(mod,iris[-train,1:4])
+table(pred$z,iris[-train,5])
+
+
+
+
 #Mixture model estimation in clustering ####
+# !!!!! important #
 #The EM algorithm ####
 #Exercice 3 ####
 # Implement your own EM algorithm for Gaussian mixture model
 # estimation.
 # Test it on simulated data.
 
+Ex3 <- function(){
+  #input : x
+  #theta : repartition p, mu, matrice de variance covariance. 
+  
+  #output: 
+}
+
+rm(list = ls())
+train=sample(1:150, 100) #génère 100 données de 1 à 150.
+x=iris[train,1:4] # prend 100 valeurs au hasard du data set iris avec les 
+z=iris[train,5] # prend les classes correspondantes des x choisis.
+
+emGMMclassif = function(){
+
+}
 
 
 #Classification EM ####
