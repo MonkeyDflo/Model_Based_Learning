@@ -5,22 +5,33 @@ EM = function(X, KnbClasses){
   #on a besoin de theta pour chaque cluster 
   #theta et égale à : p la proportion, mu la moyenne , sigma² la matrice de variance covariance.
   #On définit un nombre d'itération max
-  NbRows = nrows(X);
-  NbCols = ncols(X);
+  XnbRows = nrows(X);
+  XnbCols = ncols(X);
   ITERMAX = 3;
   propors = matrix(rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
   moyennes = matrix(rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
-  matVarCovar = matrix(rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
-  sigma=array(data = NA, dim=c(ITERMAX,KnbClasses,p,p))
+  matVarCovar = array(data = NA, dim=c(ITERMAX,KnbClasses,XnbCols,XnbCols))
   #intialisation ####
   propors[1,] = runif(n=2, min=1, max=3)
+  moyennes[1,] =  
+  matVarCovar[1,,XnbCols,XnbCols]=
+    
   
   for(i in 1:KnbClasses){
     #il faut initialiser theta les paramètres de chaque gaussienne
     print(propors[,i])
   }
+  
+  
   #E step ####
   #M step ####
+  #BIC Criterion ####
+  # theta_^ = all parameters 
+  # l = vraisemblance
+  # mu = number of parameters
+  # n ? 
+  # log(l(theta_^,x)) + (mu/2) * ln(n)
+
   #return ####
   return(propors)
 }
