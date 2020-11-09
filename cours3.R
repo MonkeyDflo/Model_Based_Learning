@@ -80,9 +80,12 @@ gmmclustering = function (x,K,itermax=200,init='random'){
       #                               }
       #                             ) / nk
       
-      sigma[iter+1,k,,] = lapply(X = 1:n, 
-                                 FUN = function(rowId) tik[rowId,k] * (x[rowId,] - mu[iter+1,k,]) %*% t(x[rowId,] - mu[iter+1,k,])
-                                 ) /nk
+      # sigma[iter+1,k,,] = lapply(X = 1:n, 
+      #                            FUN = function(rowId) tik[rowId,k] * (x[rowId,] - mu[iter+1,k,]) %*% t(x[rowId,] - mu[iter+1,k,])
+      #                            ) /nk
+      
+      sigma[iter+1,k,,] <- Reduce('+',lapply(1:n, function(m){
+        tik[m,k]*(x[m,]-mu[iter+1,k,]) %*% t(x[m,]-mu[iter+1,k,])/nk}))
       
       # on recalcule sigma pour chaque classe.
       
@@ -112,7 +115,7 @@ gmmclustering = function (x,K,itermax=200,init='random'){
 
 res=gmmclustering(x,2,itermax = 20,init='random')
 #par(mfrow=c(2,2))
-print(res$loglik)
+print(res$loglik[22])
 plot(res$loglik,type='l',main=paste('max loglik :',max(res$loglik)),cex.main=0.8)
 plot(x[,1:2],col=res$z,main='final partition')
 #plot(x,col=kmeans(x,3)$cluster)
@@ -137,11 +140,20 @@ for (k in 1:2){
 # n = number of parameter in the data set
 # BIC = loglik + (v/2) * ln(n)
 v = length(res$prop) + length(res$mu) + length(res$sigma)
-BIC = res$loglik + (v/2) * ln(nrow(x))
+BIC = res$loglik + (v/2) * log(nrow(x))
 
-vectorBIC = array(NA, 5)
-for( k in c(2,3,4,5)){
-  resTemp = gmmclustering(x,k,itermax = 20,init='random')
-  vTemp = length(resTemp$prop) + length(resTemp$mu) + length(resTemp$sigma)
-  vectorBIC[k] = resTemp$loglik + (vTemp/2) * ln(nrow(x))
+ITERMAX = 13
+
+#iterKnbClasse = c(2,3,4,5,20)
+iterKnbClasse = c(2,5,10,15)
+vectorBIC = array(NA, length(iterKnbClasse))
+iterKnbClasse2[1]
+for( i in 1:length(iterKnbClasse)){
+  print(iterKnbClasse[i])
+  resTemp = gmmclustering(x,iterKnbClasse[i],itermax = ITERMAX,init='kmeans'); print(resTemp);
+  vTemp = length(resTemp$prop) + length(resTemp$mu) + length(resTemp$sigma); print(vTemp);
+  vectorBIC[i] = resTemp$loglik[ITERMAX] + (vTemp/2) * log(nrow(x)); print(vectorBIC[i]);
+  plot(resTemp$loglik,type='l',main=paste('max loglik :',max(resTemp$loglik)),cex.main=0.8)
 }
+print(vectorBIC)
+
