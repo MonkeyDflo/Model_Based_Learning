@@ -8,15 +8,21 @@ EM = function(X, KnbClasses){
   XnbRows = nrows(X);
   XnbCols = ncols(X);
   ITERMAX = 3;
-  propors = matrix(rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
-  moyennes = matrix(rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
+  propors = matrix(data = rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
+  moyennes = matrix(data = rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
   matVarCovar = array(data = NA, dim=c(ITERMAX,KnbClasses,XnbCols,XnbCols))
+  #Loglikelihood = matrix(data = rep(NA,(KnbClasses*ITERMAX)), ncol=KnbClasses, nrow =ITERMAX)
+  # theta* = argmax du loglik
   #intialisation ####
   propors[1,] = runif(n=2, min=1, max=3)
   moyennes[1,] =  
   matVarCovar[1,,XnbCols,XnbCols]=
     
-  
+  # boucle for ITERMAX
+  # boucle for Knb classse : pour chaque classe 
+    #faire la log vraisemblance avec les données 
+    #faire la argmax de la logvraisemblance pour obtenir theta*
+    #modifier les paramêtres de la gaussienne avec les valeurs de theta*
   for(i in 1:KnbClasses){
     #il faut initialiser theta les paramètres de chaque gaussienne
     print(propors[,i])
