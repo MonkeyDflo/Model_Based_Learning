@@ -1,0 +1,67 @@
+"";"Loan";"Deposit";"Unpaid";"Insurance";"Debt.load";"Family";"Children";"Accommodation";"Profession";"Title";"Age"
+"1";"Renovation";"no_deposit";"Unp_0";"DI";"Debt_1";"Common-law";"Child_0";"Lodged by the family";"Manual Labourer";"Mr.";50
+"2";"Renovation";"no_deposit";"Unp_0";"No insurance";"Debt_2";"Married";"Child_0";"Home owner";"Technician";"Mr.";40
+"3";"Car";"Deposit";"Unp_0";"DI";"Debt_3";"Married";"Child_1";"First-time buyers";"Technician";"Mr.";30
+"4";"Renovation";"no_deposit";"Unp_0";"Senior";"Debt_2";"Widower";"Child_0";"Home owner";"Retired";"Mr.";60
+"5";"Scooter";"Deposit";"Unp_3 and +";"DI";"Debt_4";"Common-law";"Child_0";"Lodged by the employer";"Management";"Mr.";20
+"6";"Renovation";"no_deposit";"Unp_0";"Senior";"Debt_3";"Married";"Child_0";"Home owner";"Retired";"Mr.";60
+"7";"Renovation";"Deposit";"Unp_0";"Senior";"Debt_2";"Widower";"Child_0";"Home owner";"Retired";"Mrs.";60
+"8";"Renovation";"Deposit";"Unp_0";"No insurance";"Debt_2";"Widower";"Child_0";"Home owner";"Retired";"Mrs.";60
+"9";"Furnishings";"Deposit";"Unp_0";"No insurance";"Debt_1";"Common-law";"Child_0";"Lodged by the employer";"Manual Labourer";"Mr.";40
+"10";"Renovation";"Deposit";"Unp_0";"Senior";"Debt_2";"Married";"Child_0";"Home owner";"Retired";"Mr.";60
+"11";"Car";"Deposit";"Unp_0";"TPD";"Debt_3";"Common-law";"Child_0";"Tenant";"Manual Labourer";"Miss";20
+"12";"Furnishings";"no_deposit";"Unp_0";"DI";"Debt_3";"Common-law";"Child_0";"Tenant";"Technician";"Mr.";40
+"13";"Car";"Deposit";"Unp_0";"DI";"Debt_4";"Common-law";"Child_2";"Tenant";"Technician";"Mr.";30
+"14";"Furnishings";"no_deposit";"Unp_0";"DI";"Debt_3";"Common-law";"Child_1";"Home owner";"Technician";"Mr.";50
+"15";"Furnishings";"no_deposit";"Unp_0";"Senior";"Debt_2";"Divorcee";"Child_0";"Home owner";"Retired";"Mr.";60
+"16";"Furnishings";"no_deposit";"Unp_0";"TPD";"Debt_3";"Single";"Child_0";"Tenant";"Manual Labourer";"Mr.";40
+"17";"Car";"Deposit";"Unp_0";"DI";"Debt_1";"Married";"Child_1";"Home owner";"Senior management";"Mr.";50
+"18";"Renovation";"no_deposit";"Unp_3 and +";"No insurance";"Debt_4";"Married";"Child_2";"First-time buyers";"Management";"Mr.";50
+"19";"Furnishings";"no_deposit";"Unp_3 and +";"DI";"Debt_1";"Single";"Child_0";"Lodged by the family";"Technician";"Mr.";30
+"20";"Furnishings";"no_deposit";"Unp_3 and +";"TPD";"Debt_2";"Single";"Child_0";"Tenant";"Management";"Miss";30
+"21";"Car";"Deposit";"Unp_3 and +";"No insurance";"Debt_3";"Widower";"Child_0";"Home owner";"Manual Labourer";"Mr.";40
+"22";"Renovation";"Deposit";"Unp_0";"No insurance";"Debt_1";"Married";"Child_0";"Home owner";"Retired";"Mrs.";60
+"23";"Renovation";"no_deposit";"Unp_0";"DI";"Debt_1";"Single";"Child_0";"Home owner";"Management";"Mr.";50
+"24";"Renovation";"Deposit";"Unp_0";"DI";"Debt_3";"Married";"Child_2";"Home owner";"Technician";"Mr.";30
+"25";"Furnishings";"Deposit";"Unp_0";"DI";"Debt_3";"Married";"Child_2";"Home owner";"Management";"Mr.";50
+"26";"Furnishings";"Deposit";"Unp_0";"DI";"Debt_4";"Married";"Child_3";"First-time buyers";"Senior management";"Mr.";30
+"27";"Renovation";"no_deposit";"Unp_3 and +";"DI";"Debt_4";"Single";"Child_3";"Home owner";"Management";"Mr.";40
+"28";"Furnishings";"Deposit";"Unp_0";"Senior";"Debt_1";"Married";"Child_0";"Home owner";"Retired";"Mr.";60
+"29";"Motorbike";"Deposit";"Unp_0";"TPD";"Debt_1";"Single";"Child_0";"Tenant";"Technician";"Mr.";30
+"30";"Scooter";"Deposit";"Unp_1_ou_2";"DI";"Debt_4";"Married";"Child_3";"Tenant";"Technician";"Mr.";20
+"31";"Motorbike";"no_deposit";"Unp_1_ou_2";"DI";"Debt_3";"Single";"Child_0";"Tenant";"Manual Labourer";"Mr.";30
+"32";"Car";"Deposit";"Unp_0";"DI";"Debt_3";"Married";"Child_2";"First-time buyers";"Senior management";"Mr.";40
+"33";"Renovation";"Deposit";"Unp_1_ou_2";"Senior";"Debt_3";"Common-law";"Child_0";"Tenant";"Retired";"Mr.";60
+"34";"Motorbike";"Deposit";"Unp_0";"DI";"Debt_2";"Married";"Child_1";"Home owner";"Management";"Mr.";50
+"35";"Scooter";"Deposit";"Unp_0";"DI";"Debt_3";"Common-law";"Child_1";"Tenant";"Senior management";"Miss";30
+"36";"Renovation";"no_deposit";"Unp_0";"Senior";"Debt_1";"Widower";"Child_1";"Home owner";"Retired";"Mr.";60
+"37";"Car";"no_deposit";"Unp_0";"DI";"Debt_1";"Single";"Child_0";"Tenant";"Technician";"Mr.";20
+"38";"Car";"Deposit";"Unp_0";"No insurance";"Debt_1";"Single";"Child_0";"Lodged by the family";"Technician";"Mr.";30
+"39";"Motorbike";"no_deposit";"Unp_0";"DI";"Debt_3";"Married";"Child_2";"First-time buyers";"Management";"Mr.";40
+"40";"Motorbike";"Deposit";"Unp_0";"No insurance";"Debt_2";"Single";"Child_0";"Home owner";"Management";"Mr.";30
+"41";"Car";"no_deposit";"Unp_3 and +";"TPD";"Debt_2";"Single";"Child_0";"Lodged by the family";"Senior management";"Mr.";30
+"42";"Furnishings";"no_deposit";"Unp_0";"No insurance";"Debt_3";"Married";"Child_2";"Home owner";"Technician";"Mr.";50
+"43";"Car";"Deposit";"Unp_3 and +";"TPD";"Debt_4";"Divorcee";"Child_0";"Tenant";"Manual Labourer";"Mr.";20
+"44";"Furnishings";"Deposit";"Unp_0";"DI";"Debt_3";"Common-law";"Child_0";"Tenant";"Management";"Mr.";30
+"45";"Car";"Deposit";"Unp_3 and +";"Senior";"Debt_2";"Married";"Child_0";"Tenant";"Retired";"Mr.";60
+"46";"Renovation";"no_deposit";"Unp_0";"No insurance";"Debt_2";"Married";"Child_0";"Home owner";"Management";"Mr.";50
+"47";"Motorbike";"Deposit";"Unp_0";"DI";"Debt_4";"Married";"Child_2";"Home owner";"Senior management";"Mr.";50
+"48";"Motorbike";"no_deposit";"Unp_3 and +";"DI";"Debt_4";"Common-law";"Child_2";"Tenant";"Technician";"Mr.";40
+"49";"Scooter";"Deposit";"Unp_0";"DI";"Debt_3";"Divorcee";"Child_1";"Tenant";"Management";"Mrs.";20
+"50";"Furnishings";"no_deposit";"Unp_3 and +";"TPD";"Debt_2";"Single";"Child_0";"Tenant";"Manual Labourer";"Miss";20
+"51";"Car";"Deposit";"Unp_0";"DI";"Debt_4";"Married";"Child_3";"Tenant";"Technician";"Mr.";30
+"52";"Car";"Deposit";"Unp_3 and +";"TPD";"Debt_1";"Common-law";"Child_0";"Lodged by the family";"Technician";"Mr.";20
+"53";"Sidecar";"no_deposit";"Unp_0";"No insurance";"Debt_1";"Single";"Child_0";"Lodged by the employer";"Management";"Mr.";30
+"54";"Car";"Deposit";"Unp_0";"No insurance";"Debt_1";"Single";"Child_0";"Home owner";"Technician";"Mr.";50
+"55";"Renovation";"no_deposit";"Unp_1_ou_2";"DI";"Debt_3";"Single";"Child_4";"Home owner";"Senior management";"Mr.";50
+"56";"Car";"Deposit";"Unp_1_ou_2";"DI";"Debt_4";"Married";"Child_4";"Tenant";"Senior management";"Mr.";30
+"57";"Car";"no_deposit";"Unp_0";"TPD";"Debt_4";"Married";"Child_3";"First-time buyers";"Management";"Mrs.";30
+"58";"Scooter";"Deposit";"Unp_3 and +";"DI";"Debt_1";"Single";"Child_0";"Lodged by the family";"Technician";"Mr.";20
+"59";"Furnishings";"no_deposit";"Unp_0";"DI";"Debt_1";"Married";"Child_2";"Home owner";"Management";"Mr.";50
+"60";"Furnishings";"no_deposit";"Unp_3 and +";"TPD";"Debt_1";"Single";"Child_0";"Tenant";"Manual Labourer";"Miss";30
+"61";"Motorbike";"Deposit";"Unp_1_ou_2";"TPD";"Debt_3";"Widower";"Child_2";"Home owner";"Management";"Mrs.";30
+"62";"Furnishings";"no_deposit";"Unp_0";"TPD";"Debt_1";"Divorcee";"Child_0";"Tenant";"Management";"Mrs.";30
+"63";"Furnishings";"no_deposit";"Unp_3 and +";"DI";"Debt_2";"Common-law";"Child_0";"Tenant";"Manual Labourer";"Mr.";40
+"64";"Renovation";"no_deposit";"Unp_3 and +";"DI";"Debt_4";"Divorcee";"Child_3";"Home owner";"Manual Labourer";"Mrs.";30
+"65";"Car";"Deposit";"Unp_1_ou_2";"TPD";"Debt_4";"Married";"Child_1";"Tenant";"Technician";"Mr.";20
+"66";"Renovation";"no_deposit";"Unp_1_ou_2";"Senior";"Debt_2";"Married";"Child_0";"Home owner";"Retired";"Mr.";60
