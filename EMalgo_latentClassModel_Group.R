@@ -79,7 +79,8 @@ InitializeVars = function(xBinary,
       CurrInd = CurrInd + VectNbCatégories[p]
     }
   }
-  # initialisation de la loglik ####
+  # initialisation de la loglik #### 
+  # à revoir ####
   loglik[1] = CalculateLoglik(KnbClasse, prop, alpha)
   print(loglik[1])
   #return ####
@@ -117,21 +118,23 @@ LatentClassModel = function(x, KnbClasse = 2, ITERMAX = 10, threshold = 1e-6){
   # Algo EM ####
   n = nrow(x)
   tk = matrix(data = rep(NA, n*KnbClasse), nrow = n, ncol = KnbClasse)
-  p = ncol(instVars$xBinary)
+  p = ncol(x)
   for(iter in 1:ITERMAX){
     # E step ####
     for(i in 1:n){
       for(k in 1:KnbClasse){
         prdtmp = 1
         for(j in 1:p){
-          prdtmp = prdtmp * initVars$alpha[k,j]
-          #print(initVars$alpha[k,j])
-          #print(prdtmp)
+          
+          prdtmph = 1
+          for(h in 1:instVars$VectNbCatégories[j]) {
+            prdtmph = prdtmph * initVars$alpha[k,(j+h)]^instVars$xBinary[i,(j+h)]
+          }
+          prdtmp = prdtmp * prdtmph
+          
         }
         print(paste("k :",k," & prdtmp : ",prdtmp ))
         tk[i,k] = initVars$prop[k] * prdtmp
-        #print(initVars$prop[k] * prdtmp)
-        #print(tk[i,k])
       }
       sumtk = sum(tk[i,])
       for(k in KnbClasse){
@@ -140,17 +143,47 @@ LatentClassModel = function(x, KnbClasse = 2, ITERMAX = 10, threshold = 1e-6){
     }
     #print(tk)
     # M step ####
+    nk = rep(NA, KnbClasse)
+    for(k in 1:KnbClasse){
+      nk[k] = sum(tk[,k])
+    }
     #actualisation de prop
-    nk = 2 
+    # formule = pk() = nk/n 
+    for(k in 1:KnbClasse){
+      initVars$prop[k] = nk[k]/n
+    }
     #actualisation de alpha
+    # formule : alpha jhk = 1/nk * somme sur n des tik(xi) * x ijh
+    for(k in 1:KnbClasse){
+      for(j in 1:ncol(instVars$xBinary)){
+        sumtkxi = sum(tk[,k]*instVars$xBinary)
+        initVars$alpha[k,j] = (1/nk[k]) * sumtkxi
+      }
+    }
+    # loglik ####
+    initVars$loglik[iter+1] = CalculateLoglik(KnbClasse, initVars$prop, initVars$alpha)
+    print(initVars$loglik[iter+1])
+    
   }
   
   # return ####
+  return(list(loglik=initVars$loglik))
 }
 
 # Test Latent Class Model ####
 x = read.csv2("/home/florent/Documents/Model Based Learning/datas.csv")[1:3,2:11]
-LatentClassModel(x, ITERMAX = 1)
+x = read.csv2("/home/florent/Documents/Model Based Learning/datas.csv")[,2:11]
+res = LatentClassModel(x, ITERMAX = 10)
+
+# Note ! Pb avec la loglik ####
+print(res$loglik)
+
+plot(res$loglik[1:3])
+
+
+plot(res$loglik,type='l',main=paste('max loglik :',max(res$loglik)),cex.main=0.8)
+plot(x[,1:2],col=res$z,main='final partition')
+
 
 # test dirichlet ####
 a = rep(NA, 4)
